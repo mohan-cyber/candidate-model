@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Candidate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .back-button {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'candidate_list' %}" class="back-button">Back to Candidate List</a>
+
+    <h1>Create Candidate</h1>
+
+    <form method="post" action="{% url 'candidate_create' %}">
+        {% csrf_token %}
+
+        <label for="id_event">Event:</label>
+        {{ form.event }}
+
+        <label for="id_job_position">Job Position:</label>
+        {{ form.job_position }}
+
+        <label for="id_recruiter_alert">Recruiter Alert:</label>
+        {{ form.recruiter_alert }}
+
+        <label for="id_first_name">First Name:</label>
+        {{ form.first_name }}
+
+        <label for="id_last_name">Last Name:</label>
+        {{ form.last_name }}
+
+        <label for="id_email">Email:</label>
+        {{ form.email }}
+
+        <label for="id_persona">Persona:</label>
+        {{ form.persona }}
+
+        
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

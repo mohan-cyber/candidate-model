@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .candidate-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .candidate-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .candidate-item a {
+            margin-left: 10px;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .delete-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        .delete-button:hover {
+            background-color: #c0392b;
+        }
+
+        .create-candidate-link {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>Candidate List</h1>
+
+    <a class="create-candidate-link" href="{% url 'candidate_create' %}">Create New Candidate</a>
+
+    <div class="candidate-container">
+        {% for candidate in candidates %}
+            <div class="candidate-item">
+                <p>{{ candidate.first_name }} {{ candidate.last_name }}</p>
+                <div class="action-buttons">
+                    <a href="{% url 'candidate_detail' pk=candidate.pk %}">View</a>
+                    <a class="update-button" href="{% url 'candidate_update' pk=candidate.pk %}">Update</a>
+                    <button class="delete-button" data-delete-url="{% url 'candidate_delete' pk=candidate.pk %}" onclick="deleteCandidate(this)">Delete</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        function deleteCandidate(button) {
+            var deleteUrl = button.getAttribute('data-delete-url');
+
+            if (confirm("Are you sure you want to delete this candidate?")) {
+                if (deleteUrl) {
+                    console.log('Deleting candidate with URL:', deleteUrl);
+                    window.location.href = deleteUrl;
+                } else {
+                    alert("Invalid delete URL");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

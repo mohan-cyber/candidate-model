@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+        .back-button {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'candidate_list' %}" class="back-button">Back to Candidate List</a>
+    <h1>Candidate Details</h1>
+
+<ul>
+    <li><strong>Event:</strong> {{ candidate.event }}</li>
+    <li><strong>Job Position:</strong> {{ candidate.job_position }}</li>
+    <li><strong>Recruiter Alert:</strong> {{ candidate.recruiter_alert }}</li>
+    <li><strong>First Name:</strong> {{ candidate.first_name }}</li>
+    <li><strong>Last Name:</strong> {{ candidate.last_name }}</li>
+    <li><strong>Email:</strong> {{ candidate.email }}</li>
+    <li><strong>Persona:</strong> {{ candidate.persona }}</li>
+    <li><strong>Role:</strong> {{ candidate.role }}</li>
+    <li><strong>Screening Mode:</strong> {{ candidate.screening_mode }}</li>
+    <li><strong>Date of Birth:</strong> {{ candidate.dob }}</li>
+    <li><strong>Gender:</strong> {{ candidate.gender }}</li>
+    <li><strong>Marital Status:</strong> {{ candidate.marital_status }}</li>
+    <li><strong>Contact No (Primary):</strong> {{ candidate.contact_no_primary }}</li>
+    <li><strong>Contact No (Alternate):</strong> {{ candidate.contact_no_alternate }}</li>
+    <li><strong>Referred By:</strong> {{ candidate.referred_by }}</li>
+    <li><strong>Referred By (Other):</strong> {{ candidate.referred_by_other }}</li>
+    <li><strong>Address Line:</strong> {{ candidate.address_line }}</li>
+    <li><strong>City:</strong> {{ candidate.city }}</li>
+    <li><strong>Pincode:</strong> {{ candidate.pincode }}</li>
+    <li><strong>Experience Level:</strong> {{ candidate.experience_level }}</li>
+    <li><strong>Education Qualification:</strong> {{ candidate.education_qualification }}</li>
+    <li><strong>Education Specialization:</strong> {{ candidate.education_specialization }}</li>
+    <li><strong>Education Specialization (Other):</strong> {{ candidate.education_specialization_other }}</li>
+    <li><strong>Education Institution:</strong> {{ candidate.education_institution }}</li>
+    <li><strong>Education Institution (Other):</strong> {{ candidate.education_institution_other }}</li>
+    <li><strong>Source:</strong> {{ candidate.source }}</li>
+    <li><strong>Source Type:</strong> {{ candidate.source_type }}</li>
+    <li><strong>Years of Experience:</strong> {{ candidate.years_of_experience }}</li>
+    <li><strong>Current Employer:</strong> {{ candidate.current_employer }}</li>
+    <li><strong>Current Designation:</strong> {{ candidate.current_designation }}</li>
+    <li><strong>Current Monthly Salary:</strong> {{ candidate.current_monthly_salary }}</li>
+    <li><strong>Expected Monthly Salary:</strong> {{ candidate.expected_monthly_salary }}</li>
+    <li><strong>Notice Period:</strong> {{ candidate.notice_period }}</li>
+    <li><strong>Reason for Change:</strong> {{ candidate.reason_for_change }}</li>
+    <li><strong>Photo Path:</strong> {{ candidate.photo_path }}</li>
+    <li><strong>Resume Path:</strong> {{ candidate.resume_path }}</li>
+    <li><strong>Login Time:</strong> {{ candidate.login_time }}</li>
+    <li><strong>Logout Time:</strong> {{ candidate.logout_time }}</li>
+    <li><strong>IP Address:</strong> {{ candidate.ip_address }}</li>
+    <li><strong>Geo Location:</strong> {{ candidate.geo_location }}</li>
+    <li><strong>Created Date:</strong> {{ candidate.created_date }}</li>
+    <li><strong>Created By:</strong> {{ candidate.created_by }}</li>
+    <li><strong>Modified Date:</strong> {{ candidate.modified_date }}</li>
+    <li><strong>Modified By:</strong> {{ candidate.modified_by }}</li>
+    <li><strong>Status:</strong> {{ candidate.status }}</li>
+</ul>
+
+</body>
+</html>
+
