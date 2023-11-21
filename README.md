@@ -7,10 +7,10 @@
 
 ## Django Packages
 #### (for installation - pip install virtualenv)
-`/candidate $ virtualenv venv`
+`/candidate-model $ virtualenv venv`
 
 #### activate venv
-`/candidate $ source venv/bin/activate`
+`/candidate-model $ source venv/bin/activate`
 
 
 #### Install Django & required packages
@@ -42,7 +42,7 @@ http://127.0.0.1:8002/candidates/
 `
 
 
-#### To Run fake data
+#### To create fake data
 `sh
 (venv) $ python manage.py generate_fake_data 10
 `
